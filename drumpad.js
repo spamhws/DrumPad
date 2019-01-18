@@ -26,7 +26,7 @@ if (typeof window.orientation !== 'undefined'){
   };
 
 
-// Fullscreen method.
+// Below is a fullscreen method.
 var elem = document.documentElement;
 var fs = false //Fullscreen check
 $('#fullscreenBtn').click(function() {
@@ -111,11 +111,11 @@ var kick = new Audio('Sources/Audio/Kick.mp3')
 
     snare = new Audio('Sources/Audio/Additional/Snare.mp3')
     cowbell = new Audio('Sources/Audio/Additional/Cowbell.mp3')
-    brrra = new Audio('Sources/Audio/Additional/Brrra.mp3')
+    adLib = new Audio('Sources/Audio/Additional/AdLib.mp3')
     brass1 = new Audio('Sources/Audio/Additional/BrassF1.mp3')
     brass2 = new Audio('Sources/Audio/Additional/BrassGsharp2.mp3')
     brass3 = new Audio('Sources/Audio/Additional/BrassCsharp3.mp3')
-    brassLast = new Audio('Sources/Audio/Additional/BrassLast.mp3')
+    brass4 = new Audio('Sources/Audio/Additional/brassC4.mp3')
 
 
 //Cell press animation
@@ -221,16 +221,16 @@ function btnPressAnim(cell){
     case 'four15':
     case '110':
     if (activeTable === 4) {
-      brrra.load();
-      brrra.play();
+      adLib.load();
+      adLib.play();
     }
     break;
 
     case 'four16':
     case '109':
     if (activeTable === 4) {
-      brassLast.load();
-      brassLast.play();
+      brass4.load();
+      brass4.play();
     }
     break;
 
@@ -378,17 +378,30 @@ var cellThree1 = document.getElementById("three1");
     cellThree8 = document.getElementById("three8");
     cellThree9 = document.getElementById("three9");
 
-// Click Event Listeners for 3x3
-cellThree1.addEventListener('touchstart', btnPressAnim.bind(this, cellThree1))
-cellThree1.addEventListener('click', btnPressAnim.bind(this, cellThree1))
-cellThree2.addEventListener('click', btnPressAnim.bind(this, cellThree2))
-cellThree3.addEventListener('click', btnPressAnim.bind(this, cellThree3))
-cellThree4.addEventListener('click', btnPressAnim.bind(this, cellThree4))
-cellThree5.addEventListener('click', btnPressAnim.bind(this, cellThree5))
-cellThree6.addEventListener('click', btnPressAnim.bind(this, cellThree6))
-cellThree7.addEventListener('click', btnPressAnim.bind(this, cellThree7))
-cellThree8.addEventListener('click', btnPressAnim.bind(this, cellThree8))
-cellThree9.addEventListener('click', btnPressAnim.bind(this, cellThree9))
+// Click and Touch Event Listeners for 3x3
+
+if (typeof window.orientation !== 'undefined'){
+  cellThree1.addEventListener('touchstart', btnPressAnim.bind(this, cellThree1))
+  cellThree2.addEventListener('touchstart', btnPressAnim.bind(this, cellThree2))
+  cellThree3.addEventListener('touchstart', btnPressAnim.bind(this, cellThree3))
+  cellThree4.addEventListener('touchstart', btnPressAnim.bind(this, cellThree4))
+  cellThree5.addEventListener('touchstart', btnPressAnim.bind(this, cellThree5))
+  cellThree6.addEventListener('touchstart', btnPressAnim.bind(this, cellThree6))
+  cellThree7.addEventListener('touchstart', btnPressAnim.bind(this, cellThree7))
+  cellThree8.addEventListener('touchstart', btnPressAnim.bind(this, cellThree8))
+  cellThree9.addEventListener('touchstart', btnPressAnim.bind(this, cellThree9))
+} else {
+  cellThree1.addEventListener('click', btnPressAnim.bind(this, cellThree1))
+  cellThree2.addEventListener('click', btnPressAnim.bind(this, cellThree2))
+  cellThree3.addEventListener('click', btnPressAnim.bind(this, cellThree3))
+  cellThree4.addEventListener('click', btnPressAnim.bind(this, cellThree4))
+  cellThree5.addEventListener('click', btnPressAnim.bind(this, cellThree5))
+  cellThree6.addEventListener('click', btnPressAnim.bind(this, cellThree6))
+  cellThree7.addEventListener('click', btnPressAnim.bind(this, cellThree7))
+  cellThree8.addEventListener('click', btnPressAnim.bind(this, cellThree8))
+  cellThree9.addEventListener('click', btnPressAnim.bind(this, cellThree9))
+
+}
 
 // Keypress Event Listeners for 3x3
 document.addEventListener('keypress', checkKey.bind(this))
@@ -411,20 +424,42 @@ var cellFour1 = document.getElementById("four1");
     cellFour15 = document.getElementById("four15");
     cellFour16 = document.getElementById("four16");
 
-// Click Event Listeners for 4x4
-cellFour1.addEventListener('click', btnPressAnim.bind(this, cellFour1))
-cellFour2.addEventListener('click', btnPressAnim.bind(this, cellFour2))
-cellFour3.addEventListener('click', btnPressAnim.bind(this, cellFour3))
-cellFour4.addEventListener('click', btnPressAnim.bind(this, cellFour4))
-cellFour5.addEventListener('click', btnPressAnim.bind(this, cellFour5))
-cellFour6.addEventListener('click', btnPressAnim.bind(this, cellFour6))
-cellFour7.addEventListener('click', btnPressAnim.bind(this, cellFour7))
-cellFour8.addEventListener('click', btnPressAnim.bind(this, cellFour8))
-cellFour9.addEventListener('click', btnPressAnim.bind(this, cellFour9))
-cellFour10.addEventListener('click', btnPressAnim.bind(this, cellFour10))
-cellFour11.addEventListener('click', btnPressAnim.bind(this, cellFour11))
-cellFour12.addEventListener('click', btnPressAnim.bind(this, cellFour12))
-cellFour13.addEventListener('click', btnPressAnim.bind(this, cellFour13))
-cellFour14.addEventListener('click', btnPressAnim.bind(this, cellFour14))
-cellFour15.addEventListener('click', btnPressAnim.bind(this, cellFour15))
-cellFour16.addEventListener('click', btnPressAnim.bind(this, cellFour16))
+// Click and Touch Event Listeners for 4x4
+
+
+if (typeof window.orientation !== 'undefined'){
+  cellFour1.addEventListener('touchstart', btnPressAnim.bind(this, cellFour1))
+  cellFour2.addEventListener('touchstart', btnPressAnim.bind(this, cellFour2))
+  cellFour3.addEventListener('touchstart', btnPressAnim.bind(this, cellFour3))
+  cellFour4.addEventListener('touchstart', btnPressAnim.bind(this, cellFour4))
+  cellFour5.addEventListener('touchstart', btnPressAnim.bind(this, cellFour5))
+  cellFour6.addEventListener('touchstart', btnPressAnim.bind(this, cellFour6))
+  cellFour7.addEventListener('touchstart', btnPressAnim.bind(this, cellFour7))
+  cellFour8.addEventListener('touchstart', btnPressAnim.bind(this, cellFour8))
+  cellFour9.addEventListener('touchstart', btnPressAnim.bind(this, cellFour9))
+  cellFour10.addEventListener('touchstart', btnPressAnim.bind(this, cellFour10))
+  cellFour11.addEventListener('touchstart', btnPressAnim.bind(this, cellFour11))
+  cellFour12.addEventListener('touchstart', btnPressAnim.bind(this, cellFour12))
+  cellFour13.addEventListener('touchstart', btnPressAnim.bind(this, cellFour13))
+  cellFour14.addEventListener('touchstart', btnPressAnim.bind(this, cellFour14))
+  cellFour15.addEventListener('touchstart', btnPressAnim.bind(this, cellFour15))
+  cellFour16.addEventListener('touchstart', btnPressAnim.bind(this, cellFour16))
+} else {
+  cellFour1.addEventListener('click', btnPressAnim.bind(this, cellFour1))
+  cellFour2.addEventListener('click', btnPressAnim.bind(this, cellFour2))
+  cellFour3.addEventListener('click', btnPressAnim.bind(this, cellFour3))
+  cellFour4.addEventListener('click', btnPressAnim.bind(this, cellFour4))
+  cellFour5.addEventListener('click', btnPressAnim.bind(this, cellFour5))
+  cellFour6.addEventListener('click', btnPressAnim.bind(this, cellFour6))
+  cellFour7.addEventListener('click', btnPressAnim.bind(this, cellFour7))
+  cellFour8.addEventListener('click', btnPressAnim.bind(this, cellFour8))
+  cellFour9.addEventListener('click', btnPressAnim.bind(this, cellFour9))
+  cellFour10.addEventListener('click', btnPressAnim.bind(this, cellFour10))
+  cellFour11.addEventListener('click', btnPressAnim.bind(this, cellFour11))
+  cellFour12.addEventListener('click', btnPressAnim.bind(this, cellFour12))
+  cellFour13.addEventListener('click', btnPressAnim.bind(this, cellFour13))
+  cellFour14.addEventListener('click', btnPressAnim.bind(this, cellFour14))
+  cellFour15.addEventListener('click', btnPressAnim.bind(this, cellFour15))
+  cellFour16.addEventListener('click', btnPressAnim.bind(this, cellFour16))
+
+}
